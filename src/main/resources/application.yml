@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth-bd-1
+    username: postgres_admin
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:/db/db.changelog-master.yml
