@@ -1,8 +1,8 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 2
       author: https://github.com/lifedaemon-kill
       changes:
         - sqlFile:
-            path: schema/user.sql
+            path: create-tables/users.sql
             relativeToChangelogFile: true
