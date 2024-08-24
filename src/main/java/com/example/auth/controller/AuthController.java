@@ -1,31 +1,23 @@
 package com.example.auth.controller;
 
-import com.example.auth.service.AuthService;
-import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import com.example.auth.dto.UserSignInRequest;
+import com.example.auth.dto.UserSignUpRequest;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.server.EntityResponse;
 
-@RestController
-@RequestMapping("/auth")
-@Log4j2
-public final class AuthController {
-    @Autowired
-    private AuthService authService;
+@RestController("/auth")
+public class AuthController {
 
-    @PostMapping("/tokens/{userId}")
-    public ResponseEntity<?> auth(@PathVariable String userId, HttpServletRequest request) {
-        String ipAddress = request.getRemoteAddr();
-        log.info(ipAddress);
+    @PostMapping("/sing-in")
+    EntityResponse<?> signIn(@RequestBody UserSignInRequest user) {
         return null;
     }
 
-    @PostMapping("/refresh")
-    public ResponseEntity<?> refresh() {
+    @PostMapping("/sing-up")
+    EntityResponse<?> signUp(@RequestBody UserSignUpRequest user) {
         return null;
     }
+
 }

@@ -2,7 +2,7 @@ package com.example.auth.api;
 
 import org.junit.jupiter.api.Test;
 
-class AuthControllerTest {
+class TokensControllerTest {
 
     @Test
     void auth() {
